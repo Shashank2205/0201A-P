@@ -12,8 +12,6 @@ print("Welcome To Analytics")
 print("Hi Welcome to Python", "Welcome to Analytics")
 print("Hi Welcome to Python", "Welcome to Analytics", sep="-")
 
-
-
 print("Hi Welcome to Python", "Welcome to Analytics", end="-----")
 print("Hi Welcome to Python", "Welcome to Analytics", sep="-")
 
@@ -48,7 +46,6 @@ print("s")
 
 country= "India"
 print("I live in ", country, sep='--')
-
 
 print("I live in country")
 
@@ -249,7 +246,7 @@ w = 'python'
 
 hw = h + w
 
-hw = h +" "+ w
+hw = h + " " + w
 
 print(hw)
 
@@ -300,4 +297,6 @@ n = name.split(" ")
 
 n[0]
 n[1]
+
+n
 

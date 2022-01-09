@@ -108,6 +108,8 @@ l4
 l4.append(12)
 l4
 
+l4 = [4,3,7,6,9, 3,5, 3,4,2,1,6]
+
 print(l4.remove(7))
 print(l4)
 
@@ -608,7 +610,7 @@ for i in rl:
         break
     cnt=cnt+1
 print(cnt)
-    
+
 
 
 
