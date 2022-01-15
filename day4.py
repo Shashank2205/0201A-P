@@ -413,6 +413,116 @@ pd9.to_csv('data.csv')
 
 
 
+import pandas as pd
+
+df = pd.read_csv('20denco.csv')
+df.columns
+
+df.groupby('custname').size()
+df.groupby('custname').count()
+df.groupby('custname').size().sort_values(ascending=False)
+df.groupby('custname').size().sort_values(ascending=False).head(10)
+
+df.groupby('custname').agg({'revenue':'sum'}).sort_values(ascending=False, by='revenue')
+df.groupby('custname').agg({'revenue':'sum'}).sort_values(ascending=False, by='revenue').head(10)
+
+
+df.columns
+
+prevenue=df.groupby('partnum').agg({'revenue':'sum'}).sort_values(ascending=False, by='revenue').head(10)
+
+
+marg = df.groupby('partnum').agg({'margin':'sum'}).sort_values(ascending=False, by='margin').head(10)
+
+
+
+'''
+•	Who are the most loyal Customers -
+o	Make customer table, See customer transaction,
+o	Sort Customer Transaction,
+o	How many times are these customers buying from me
+o	Select the Top 5 or 10 rows (Sorted in Descending Order of Frequency)
+•	Which customers contribute the most to their revenue
+o	Sum the revenue by each customer
+o	Sort revenue by customers in descending Order
+•	What part numbers bring in to significant portion of revenue
+o	Sum/ Group the revenue by part no
+o	Sort the revenue by decreasing order
+o	Top revenue by part nos
+•	What parts have the highest profit margin ?
+o	Sum the margin by partno
+o	Sort the margin by decreasing order
+o	Parts contributing highest profit margin
+•	Who are their top buying customers
+•	Who are the customers who are bringing more revenue
+
+'''
+
+
+df = pd.read_excel('20denco.xlsx')
+df
+
+df.to_excel('Data.xlsx')
+
+
+#write to more than one sheet in the workbook, it is necessary to specify an ExcelWriter object:
+with pd.ExcelWriter('Data.xlsx') as writer:
+    df.to_excel(writer, sheet_name='Data', index=False)
+    marg.to_excel(writer, sheet_name='Margin')
+    prevenue.to_excel(writer, sheet_name='Revenue')
+    
+
+df = pd.read_excel('Data.xlsx', sheet_name='Revenue')
+df
+
+
+
+
+import matplotlib.pyplot as plt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
