@@ -480,6 +480,276 @@ df
 
 import matplotlib.pyplot as plt
 
+Year = [1920,1930,1940,1950,1960,1970,1980,1990,2000,2010]
+Unemployment_Rate = [9.8,12,8,7.2,6.9,7,6.5,6.2,5.5,6.3]
+Unemployment_Rate1 = [1.8,2,8,4.2,6.0,7,3.5,5.2,7.5,5.3]
+
+Year
+Unemployment_Rate
+
+
+plt.plot(Year, Unemployment_Rate)
+plt.title('Year versus Unemployement Rate')
+plt.xlabel('Year')
+plt.ylabel('UR1')
+plt.show()
+
+
+
+
+
+plt.plot(Year, Unemployment_Rate)
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.show()
+
+plt.plot(Year, Unemployment_Rate)
+plt.plot(Year, Unemployment_Rate1)
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.show()
+
+
+plt.plot(Year, Unemployment_Rate, color='Red')
+plt.plot(Year, Unemployment_Rate1, color='Green')
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.show()
+
+
+plt.plot(Year, Unemployment_Rate, color='r')
+plt.plot(Year, Unemployment_Rate1, color='k')
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.show()
+
+
+col = ['#FFAEBC','#A0E7E5', '#B4F8C8','#FBE7C6', '#050A30','#000C66',
+       '#0000FF','#7EC8E3']
+
+plt.plot(Year, Unemployment_Rate, color=col[3])
+plt.plot(Year, Unemployment_Rate1, color=col[1])
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.show()
+
+
+plt.plot(Year, Unemployment_Rate, color='r', marker='*', markersize=12)
+plt.plot(Year, Unemployment_Rate1, color='k', marker='<', markersize=12)
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.show()
+
+
+
+plt.plot(Year, Unemployment_Rate, color='r', marker='*', markersize=12, label='UR1')
+plt.plot(Year, Unemployment_Rate1, color='k', marker='<', markersize=12, label='UR2')
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.legend()
+plt.show()
+
+
+
+plt.plot(Year, Unemployment_Rate, color='r', linestyle='dashed', marker='*', markersize=8, label='UR1')
+plt.plot(Year, Unemployment_Rate1, color='k', linestyle='dashdot',marker='<', markersize=8, label='UR2')
+plt.title('Year versus Unemployement Rate', fontsize=15)
+plt.xlabel('Year', fontsize=12)
+plt.ylabel('UR1', fontsize=12)
+plt.legend()
+plt.show()
+
+
+
+
+#Bar plot
+
+Country = ['USA','Canada','Germany','UK','France']
+GDP = [45000,42000,52000,49000,47000]
+
+
+plt.bar(Country, GDP, color=col)
+plt.title('Country versus GDP', fontsize=15)
+plt.xlabel('Country', fontsize=12)
+plt.ylabel('GDP', fontsize=12)
+plt.show()
+
+
+import pandas as pd
+df = pd.DataFrame({'Country':Country, 'GDP':GDP})
+
+plt.bar(df['Country'], df['GDP'], color=col)
+plt.title('Country versus GDP', fontsize=15)
+plt.xlabel('Country', fontsize=12)
+plt.ylabel('GDP', fontsize=12)
+plt.show()
+
+
+
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(2,1)
+
+fig
+
+ax
+
+ax[0].plot(Year, Unemployment_Rate, color='r', linestyle='dashed', marker='*', markersize=8, label='UR1')
+ax[1].bar(df['Country'], df['GDP'], color=col)
+
+
+
+
+#Scatter
+x=[1,3,2,5,6,8,2]
+y= [11,2,14,53,33,66,75]
+
+plt.scatter(x,y)
+
+
+from pydataset import data
+
+mt = data('mtcars')
+
+mt
+
+
+plt.scatter(mt['hp'],mt['mpg'])
+plt.xlabel('HP')
+plt.ylabel('MPG')
+
+
+
+plt.scatter(mt['hp'],mt['mpg'], c=mt['cyl'], s=20)
+plt.xlabel('HP')
+plt.ylabel('MPG')
+
+
+mt.head(5)
+
+
+plt.scatter(mt['hp'],mt['mpg'], c=mt['cyl'], s=mt['disp'])
+plt.xlabel('HP')
+plt.ylabel('MPG')
+
+
+
+
+#Bar
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+plt.bar(['M','F'], [30,10])
+
+plt.barh(['M','F'], [30,10])
+
+plt.bar(['M','F'], [30,10], color = ['r', 'g'])
+
+#with other options
+plt.bar(['M','F'], [30,10], color = ['r', 'g'])
+plt.title("Student Proportion")
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.yticks(rotation=45)
+plt.show()  #used if running as file
+
+
+lp = np.linspace(0,30, 4)
+lp
+plt.bar(['M','F'], [30,10], color = ['r', 'g'])
+plt.title("Student Proportion")
+plt.grid(True)
+plt.xticks(rotation=45)
+plt.yticks(lp, rotation=45)
+plt.show()  #used if running as file
+
+
+
+
+#what if both columns are numeric
+# x axis values 
+x = [1,2,3,4,5,6] 
+# corresponding y axis values 
+y = [30,40,50,20,58,79] 
+
+plt.bar(x,y)
+plt.ylim(0,100)
+plt.yticks(np.linspace(0,100,11))
+
+
+
+import matplotlib.pyplot as plt
+
+SMALL_SIZE = 12
+MEDIUM_SIZE = 14
+BIGGER_SIZE = 16
+
+plt.rc('font', size=SMALL_SIZE)          # controls default text sizes
+plt.rc('axes', titlesize=SMALL_SIZE)     # fontsize of the axes title
+plt.rc('axes', labelsize=MEDIUM_SIZE)    # fontsize of the x and y labels
+plt.rc('xtick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('ytick', labelsize=SMALL_SIZE)    # fontsize of the tick labels
+plt.rc('legend', fontsize=SMALL_SIZE)    # legend fontsize
+plt.rc('figure', titlesize=BIGGER_SIZE)  # fontsize of the figure title
+
+
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+
+data1 = np.random.randint(1,100, size=1000)
+plt.hist(data1)
+
+np.mean(data1)
+np.median(data1)
+np.std(data1)
+
+data2 = np.random.normal(100,100, size=100)
+plt.hist(data2)
+
+np.mean(data2)
+np.median(data2)
+np.std(data2)
+
+
+
+
+#Boxplot
+
+plt.boxplot(data2)
+
+
+
+import seaborn as sns
+sns.set_theme(style="whitegrid")
+
+tips = sns.load_dataset("tips")
+tips.columns
+tips.head(2)
+
+plt.scatter(tips["total_bill"], tips["tip"])
+
+
+
+
+tips = tips[tips['total_bill']<40]
+tips = tips[tips['tip']<5.9]
+
+plt.scatter(tips["total_bill"], tips["tip"])
+plt.ylim(0,11)
+plt.xlim(0,53)
 
 
 
@@ -502,6 +772,21 @@ import matplotlib.pyplot as plt
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#df.plot(kind='bar')
 
 
 
