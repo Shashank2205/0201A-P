@@ -741,15 +741,32 @@ tips.head(2)
 
 plt.scatter(tips["total_bill"], tips["tip"])
 
-
-
-
 tips = tips[tips['total_bill']<40]
 tips = tips[tips['tip']<5.9]
 
 plt.scatter(tips["total_bill"], tips["tip"])
 plt.ylim(0,11)
 plt.xlim(0,53)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
