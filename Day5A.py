@@ -269,11 +269,12 @@ model.fit(x,y)
 ypred = model.predict(x)
 ypred
 
-
 plt.scatter(x,y)
 plt.scatter(x,ypred)
-
 model.score(x,y)
+
+
+
 
 
 
@@ -288,7 +289,7 @@ yprob = model.predict_proba(x)[:,1]
 yprob
 plt.scatter(x,y)
 plt.scatter(x,yprob)
-''
+'''
 
 
 
