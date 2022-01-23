@@ -155,7 +155,6 @@ y.shape
 
 
 from sklearn.linear_model import LinearRegression
-
 model = LinearRegression()
 model.fit(x,y)
 
@@ -166,11 +165,6 @@ import seaborn as sns
 pp = sns.pairplot(df, size=1.8, aspect=1.8,
                   plot_kws=dict(edgecolor="k", linewidth=0.5),
                   diag_kind="kde", diag_kws=dict(shade=True))
-
-
-
-
-
 
 
 
@@ -243,106 +237,6 @@ print(MTmodel1.summary())
 
 fig = plt.figure(figsize=(12, 8))
 fig = sm.graphics.plot_ccpr_grid(MTmodel1, fig=fig)
-
-
-#Logistic Regression
-
-import numpy as np
-x = np.random.randint(1, 100, size=100 ).reshape((-1,1))
-x.shape
-y = np.random.randint(0,2, size=100)
-y.shape
-
-
-x
-y
-
-import matplotlib.pyplot as plt
-plt.scatter(x,y)
-
-
-from sklearn.linear_model import LinearRegression
-
-model = LinearRegression()
-
-model.fit(x,y)
-ypred = model.predict(x)
-ypred
-
-plt.scatter(x,y)
-plt.scatter(x,ypred)
-model.score(x,y)
-
-
-
-
-
-
-'''
-from sklearn.linear_model import LogisticRegression
-model  = LogisticRegression()
-model.fit(x,y)
-ypred = model.predict(x)
-ypred
-
-yprob = model.predict_proba(x)[:,1]
-yprob
-plt.scatter(x,y)
-plt.scatter(x,yprob)
-'''
-
-
-
-
-
-
-
-
-
-
-import math
-
-math.exp(10)
-
-ls= list(range(-6,6))
-
-y=[]
-for x in ls:
-    y.append((1)/(1+math.exp(-x)))
-
-
-import matplotlib.pyplot as plt
-
-plt.scatter(ls,y)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
